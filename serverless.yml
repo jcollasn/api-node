@@ -1,0 +1,59 @@
+
+service: api-node
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "dynamodb:CreateTable"
+            - "dynamodb:GetItem"
+            - "dynamodb:PutItem"
+          Resource: "*"
+        - Effect: "Allow"
+          Action:
+            - "cloudwatch:*"
+          Resource: "arn:aws:logs:*:*:*"
+  environment:
+    SERVICE: swapi.py4e.com/api
+
+functions:
+  getPeople:
+    handler: lambda/handler.get
+    name: ${self:provider.stage}-swapi-get
+    events:
+      - http:
+          path: /swapi/{id}
+          method: get
+  createPeople:
+    handler: lambda/handler.create
+    name: ${self:provider.stage}-swapi-create
+    events:
+      - http:
+          path: /swapi/create
+          method: post
+
+plugins:
+  - serverless-offline
+
+resources:
+  Resources:
+    PeopleTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: people
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
