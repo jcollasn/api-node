@@ -68,14 +68,13 @@ Despliegue de Lambdas
 
     1.3 Instalación de Lambdas
         1. En Github, repositorio:
-        • API https://github.com/jcollasn/api-node
-        2. Clonar el repositorio:
-        • API Node
-        a. Ejecutar el comando:
-                git clone https://github.com/jcollasn/api-node.git
-
-        b. Ingresar al directorio:
-                    cd api-node
+     		• API https://github.com/jcollasn/api-node
+   	2. Clonar el repositorio:
+        	• API Node
+        	a. Ejecutar el comando:
+                	git clone https://github.com/jcollasn/api-node.git
+        	b. Ingresar al directorio:
+                    	cd api-node
 	![image](https://github.com/jcollasn/api-node/assets/19940696/740a6e0e-7d66-4c88-9a5e-d247aa17e6f3)
 
 			
