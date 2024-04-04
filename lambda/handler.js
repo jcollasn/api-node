@@ -9,7 +9,7 @@ async function getStarWarsCharacter(characterId) {
     const response = await axios.get(`https://${swapi}/people/${characterId}/`);
     return response.data;
   } catch (error) {
-    console.error('Error al obtener información del personaje de swapi:', error);
+    //console.error('Error al obtener información del personaje de swapi:', error);
     throw error;
   }
 }
@@ -47,20 +47,27 @@ module.exports.get = async (event) => {
 };
 
 module.exports.create = async (event) => {
-  const body = JSON.parse(event.body)
+  const body = event.body != undefined ? JSON.parse(event.body) : {}
+  const { idPeople } = body
   let response = {} 
-  await getStarWarsCharacter(body.idPeople)
+  await getStarWarsCharacter(idPeople)
   .then(character => {
     response = character
   })
   .catch(error => {
-    console.error('Error:', error);
+    //console.error('Error:', error.message);
   });
-  console.log(response)
+  
+  if (idPeople == undefined) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({response:`Error en obtener la data`}),
+    };
+  }
   const params = {
     TableName: 'people',
     Item: {
-      id: body.idPeople.toString(),
+      id: idPeople.toString(),
       nombre: response.name,
       altura: response.height,
       peso: response.mass,
@@ -72,10 +79,18 @@ module.exports.create = async (event) => {
     }
   };
 
-  await dynamodb.put(params).promise();
+  try {
+    await dynamodb.put(params).promise();
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({response:`Se almaceno el item ${body.idPeople}`}),
-  };
+    return {
+      statusCode: 200,
+      body: JSON.stringify({response:`Se almaceno el item ${idPeople}`}),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: error })
+    };
+  }
+  
 };

@@ -1,2 +1,84 @@
 # api-node
 API en Node.js con framework Serverless 
+Despliegue de Lambdas 
+
+1.1 Prerrequisitos
+    1. Contar con un equipo local con sistema operativo Linux, que tenga instalado las siguientes herramientas:
+    • NodeJS v16 o mayor.
+    • Serverless v3 o mayor.
+    • Git v2 o mayor.
+
+    2. Contar con acceso a Github sobre el proyecto repositorio:
+    • https://github.com/jcollasn/api-node
+
+    3. Contar con acceso AWS con los siguientes recursos:
+    • CloudFormation
+    • ApiGateway
+    • Lambda
+    • IAM
+    • CloudWatch
+    • Dynamodb
+
+1.2 Validación de ambiente
+    1. NodeJS
+	Verificar que la instancia instalada de NodeJS es como mínimo la versión 12.
+
+    Utilizar el comando:
+    node –v
+
+    Ejemplo:
+
+
+
+        En caso no contar con NodeJs, instalarlo.
+
+    Utilizar los comandos:
+    curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash
+    sudo apt install -y nodejs
+
+
+2. Serverless
+	Verificar que la instancia instalada de Serverless es como mínimo la versión 2.
+
+    Utilizar el comando:
+    serverless --version
+
+    Ejemplo:
+
+
+
+	En caso no contar con Serverless, instalarlo.
+
+    Utilizar el comando:
+    npm install -g serverless
+
+
+3. Git
+	Verificar que la instancia instalada de Git es como mínimo la versión 2.
+
+    Utilizar el comando:
+    git --version
+
+    Ejemplo:
+
+
+
+    1.3 Instalación de Lambdas
+        1. En Github, repositorio:
+        • API https://github.com/jcollasn/api-node
+        2. Clonar el repositorio:
+        • API Node
+        a. Ejecutar el comando:
+                git clone https://github.com/jcollasn/api-node.git
+
+        b. Ingresar al directorio:
+                    cd api-node
+
+			
+
+
+    3. Instalar NPM para API node, ejecutar el comando:
+		npm install
+
+    4. Desplegar API Node, ejecutar el comando:
+		serverless deploy 
