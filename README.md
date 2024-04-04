@@ -3,10 +3,10 @@ API en Node.js con framework Serverless
 Despliegue de Lambdas 
 
 1.1 Prerrequisitos
-1. Contar con un equipo local con sistema operativo Linux, que tenga instalado las siguientes herramientas:
-• NodeJS v16 o mayor.
-• Serverless v3 o mayor.
-• Git v2 o mayor.
+	1. Contar con un equipo local con sistema operativo Linux, que tenga instalado las siguientes herramientas:
+ 		- NodeJS v16 o mayor.
+		- Serverless v3 o mayor.
+		- Git v2 o mayor.
 
     2. Contar con acceso a Github sobre el proyecto repositorio:
     • https://github.com/jcollasn/api-node
