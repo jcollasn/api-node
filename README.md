@@ -45,7 +45,7 @@ Despliegue de Lambdas
     serverless --version
 
     Ejemplo:
-	![image](https://github.com/jcollasn/api-node/assets/19940696/05b7dcff-f98a-496c-a92f-4a5711648cc7)
+![image](https://github.com/jcollasn/api-node/assets/19940696/05b7dcff-f98a-496c-a92f-4a5711648cc7)
 
 
 
@@ -62,7 +62,7 @@ Despliegue de Lambdas
     git --version
 
     Ejemplo:
-	![image](https://github.com/jcollasn/api-node/assets/19940696/0884f8ff-35df-4327-bf9a-32322c33b71b)
+![image](https://github.com/jcollasn/api-node/assets/19940696/0884f8ff-35df-4327-bf9a-32322c33b71b)
 
 
 
@@ -76,7 +76,7 @@ Despliegue de Lambdas
 
         b. Ingresar al directorio:
                     cd api-node
-		![image](https://github.com/jcollasn/api-node/assets/19940696/740a6e0e-7d66-4c88-9a5e-d247aa17e6f3)
+	![image](https://github.com/jcollasn/api-node/assets/19940696/740a6e0e-7d66-4c88-9a5e-d247aa17e6f3)
 
 			
 
